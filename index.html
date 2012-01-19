@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+<head>
+	<title>Workshop: Sass y Compass</title>
+	<meta charset='utf-8'>
+	<script src='js/slides.js'></script>
+</head>
+  
+<body style='display: none'>
+
+<section class='slides layout-regular workshop'>
+
+<!--Slide-->
+<article>
+<h1>Sass y Compass</h1>
+<p>
+Leandro D'Onofrio
+<br>
+<a href="http://dzign.us/">http://dzign.us</a>
+<br>
+<a href="http://twitter.com/dzignus">@dzignus</a>
+<br>
+<br>
+<br>
+Enero, 2012
+</p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article class='smaller'>
+<h3>Breve Temario</h3>
+<p>
+<ul style="margin-top: -10px;">
+<li>Introducción</li>
+<li>¿Porqué?</li>
+<li>Nivel 1: Novato
+<ul>
+<li>Instalación y compilación</li>
+<li>Anidamiento, Variables, Mixins y Herencia entre selectores</li>
+<li>Funciones y estructuras de control</li>
+</ul>
+</li>
+<li>Nivel 16: Intermedio
+<ul>
+<li>Estilos parciales</li>
+<li>CSS3</li>
+<li>Sprites</li>
+<li>Data URIs</li>
+</ul>
+</li>
+<li>Nivel 36: Avanzado
+<ul>
+<li>Extensiones</li>
+<li>Alternativas</li>
+</ul>
+</li>
+<li>¿Preguntas?</li>
+<li>Links</li>
+</ul>
+</p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article class='fill'>
+<h3>¡Hola!, bienvenid@s!</h3>
+<p><img src='images/professor-oak.png'></p>
+<div class='source'>Profesor Oak</div>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>Introducción</h3>
+<q>En este Workshop vamos a hablar sobre cómo ser más productivos escribiendo CSS.</q>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<p>Pero antes, <strong>deberías</strong> saber que:</p>
+<p style="font-size: 1.3em; text-align: center; margin-top: 80px; margin-bottom: 80px; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">Escribir CSS no es igual a cualquier lenguaje de programación.</p>
+<ul>
+<li>No existen variables...</li>
+<li>No se pueden hacer operaciones lógicas entre valores...</li>
+<li>No posee flujos de control...</li>
+<li>Esto es porque CSS es un <strong>Lenguaje de estilos</strong>.</li>
+</ul>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<p>Y por otro lado cada vez tenemos diseños más complejos:</p>
+<ul>
+<li>Diseños dinámicos que cambian <a href="http://www.smashingmagazine.com/">radicalmente</a> por el tamaño de la pantalla... incluso por el tipo de dispositivo;</li>
+</ul>
+<p style="text-align: center; margin-top: 70px;"><img src="images/devices.png"><a style="font-size: 0.5em;" href="http://foundation.zurb.com/">http://foundation.zurb.com/</a></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<ul>
+<li>Necesitamos sitios mejor optimizados, más ligeros, con mejores experiencias del usuario:</li>
+</ul>
+<p style="text-align: center; margin-top: 70px;"><img src='images/twitter.png'></p>
+<p style="text-align: center; margin-top: 50px;"><a style="font-size: 0.5em;" href="http://search.slashdot.org/story/10/04/11/1445236/google-incorporates-site-speed-into-pagerank-calculation"><img src='images/slashdot.png'></a></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<ul>
+<li>CSS también evoluciona (a sus pasos):</li>
+</ul>
+<p style="text-align: center; margin-top: 70px;"><img src='images/css3.png'></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<p>Sass y Compass nos van a dar una mano.</p>
+<p style="text-align: center; margin-bottom: 60px;"><img src="images/sass-logo.gif"><br><a style="font-size: 0.8em;" href="http://sass-lang.com/">http://sass-lang.com/</a></p>
+<p style="text-align: center;"><img src="images/compass-logo.png"><br><a style="font-size: 0.8em;" href="http://compass-style.org/">http://compass-style.org/</a></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<p><strong>¡Cuidado!</strong> Estadísticamente*, el 98% de las personas que escuchan hablar sobre estas herramientas, comentan en voz alta:</p>
+<q style="margin-top: 50px;">
+Escribir CSS es muy simple, no hace falta utilizar otras herramientas o aprender una nueva sintaxis.
+</q>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>¿Porqué utilizar estas herramientas?</h3>
+<ul>
+<li>Porque la simplicidad de CSS es su peor enemigo:
+<ul>
+<li>En sitios medianos a grandes, es dificil de organizar, escalar, mantener y refactorear...</li>
+</ul>
+</li>
+<li>Cada vez nos dedicamos más tiempo en investigación...</li>
+<li>Más tiempo en escribir estilos...</li>
+<li>Más tiempo en mantenimiento...</li>
+</ul>
+<p style="font-size: 1.2em; text-align: center; margin-top: 40px; margin-bottom: 80px; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">No somos máquinas, no nos interesa perder el tiempo, queremos ser más productivos.</p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article class='fill'>
+<h3>Nivel 1: Novato</h3>
+<p><img src='images/charmander.png'></p>
+<div class='source'>Charmander</div>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>¿Qué es Sass?</h3>
+<q>Sass es como escribir CSS en el 2025.</q>
+<ul style="margin-top: 100px;">
+<li>Creado en el 2007.</li>
+<li>Desarrollado en Ruby <span style="font-size: 0.8em;">(¡No requiere conocer el lenguaje!)</span></li>
+<li><a style="font-size: 0.8em;" href="http://sass-lang.com/">http://sass-lang.com/</a></li>
+</ul>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>Instalación (en 2 pasos)</h3>
+<br>
+<p><span class="black">Paso 1</span>: Instalar Ruby y RubyGems</p>
+<ul>
+<li>Windows: <a href="http://rubyinstaller.org/">http://rubyinstaller.org/</a></li>
+<li>Mac: Ya viene instalado :)</li>
+<li>Linux: 
+<section style="margin-top: -20px;">
+<pre>
+# Debian
+$ sudo apt-get install ruby1.9.1
+$ sudo apt-get install rubygems</pre>
+</section>	
+</li>
+</ul>
+<p><span class="black">Paso 2</span>: Abrir la consola/terminal y escribir:</p>
+<section style="margin-top: -20px;">
+<pre>$ gem install sass</pre>
+</section>
+<img src="images/ruby-logo.png" style="position: absolute; top: 70px; right: 70px;">
+</article>
+<!--Slide-->
+
+
+<!--Slide-->
+<article>
+<h3>Antes de empezar...</h3>
+<p>
+Sass maneja dos tipos de sintaxis:
+</p>
+<p>
+<span>Indentada:</span>
+</p>
+<section>
+<pre>
+/* estilos.sass */
+#main
+  color: blue
+  font-size: 0.3em</pre>
+</section>
+<p>
+<span>La manera actual (y la que utilizaremos):</span>
+</p>
+<section>
+<pre>
+/* estilos.scss */
+#main {
+  color: blue;
+  font-size: 0.3em;
+}</pre>
+</section>	
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>Comenzar a compilar</h3>
+<p>En la carpeta en donde tenemos nuestros archivos .scss:</p>
+<section>
+<pre>$ sass input.scss output.css</pre>
+</section>
+<p>También podemos hacer que Sass "vigile" si existen cambios en nuestros .scss:</p>
+<section>
+<pre>$ sass --watch sass_folder:css_folder</pre>
+</section>
+<p>Sass detecta cada cada vez que se realiza un cambio (incluso nuevas carpetas), compilando los archivos .scss y creando los nuevos .css dentro de la ruta indicada.</p>
+<p>En la consola se mostrarán los cambios realizados, así como si surgen errores de compilación.</p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<p>Si ya tenemos archivos .css creados, podemos renombrarlos manualmente a .scss, Sass los detectará sin problemas.</p>
+<p>También se puede hacer el trabajo de manera automatizada con <code>sass-convert</code>:</p>
+<section>
+<pre>
+$ sass-convert --from css --to scss --recursive &lt;ruta&gt;
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>Anidamiento</h3>
+<section style="width: 400px; position: absolute; left: 50px; top: 80px;">
+<pre>
+/* estilos.scss */	
+
+// Anidamiento de selectores
+.container{
+  
+  h3{
+    color: blue;
+  }
+  
+  p{
+    // Anidamiento de estilos
+    font: {
+      size: 12px;
+      weight: bold;
+      family: sans-serif;
+    }
+  }
+    
+}
+</pre>
+</section>
+
+<section style="width: 320px; position: absolute; right: 70px; top: 170px;">
+<pre>
+/* estilos.css */	
+
+.container h3 {
+  color: blue;
+}
+.container p {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Anidamiento</h3>
+<section style="width: 350px; position: absolute; left: 50px; top: 100px;">
+<pre>
+// Anidamiento de selectores
+.container{
+  
+  a{
+    text-decoration: underline;
+    
+    // Referencia al selector 
+    // padre más cercano
+    &:hover{
+      text-decoration: none;
+    }
+	
+    &:focus{
+      color: red;
+    }
+	
+    // Referencia al selector 
+    // padre mayor
+    .ie & {
+      color: green;
+    }
+    
+  }
+    
+}
+</pre>
+</section>
+
+<section style="width: 300px; position: absolute; right: 50px; top: 170px;">
+<pre>
+.container a {
+  text-decoration: underline;
+}
+.container a:hover {
+  text-decoration: none;
+}
+.container a:focus {
+  color: red;
+}
+.ie .container a {
+  color: green;
+}
+
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Variables</h3>
+<section style="width: 400px; position: absolute; left: 50px; top: 50px;">
+<pre>
+// Variables globales
+$amarillo: #F2FF62;
+$ancho: 960px;
+
+.container{
+  width: $ancho;
+  
+  .header{
+    // Utiliza $amarillo
+    color: $amarillo;
+    
+    // Sobre-escribe la variable 
+    // global $ancho
+    $ancho: $ancho / 2;
+    width: $ancho;
+    
+    // Define una nueva variable 
+    // dentro de este scope
+    $alto: 80px;
+    height: $alto;
+  }
+  
+  .footer{
+    width: $ancho;
+    //height: $alto; ¡Muestra error!
+  }
+  
+}
+</pre>
+</section>
+
+<section style="width: 300px; position: absolute; right: 50px; top: 170px;">
+<pre>
+.container {
+  width: 960px;
+}
+.container .header {
+  color: #f2ff62;
+  width: 480px;
+  height: 80px;
+}
+.container .footer {
+  width: 480px;
+}
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Mixins</h3>
+<p>Los mixins son abstracciones que permiten la reutilización de estilos.</p>
+<section style="width: 430px; position: absolute; left: 50px; top: 100px;">
+<pre>
+// Definición de un mixin
+@mixin rounded-box($radio, $ancho : 100px){
+  border-radius: $radio;
+  -moz-border-radius: $radio;
+  -webkit-border-radius: $radio;
+  width: $ancho;
+  height: auto;
+}
+
+.container{
+  // Utiliza el mixin pasando 
+  // dos argumentos
+  @include rounded-box(15px, 960px);
+  
+  .box{
+    // Utiliza el mixin pasando 
+    // un solo argumento
+    @include rounded-box(5px);
+  }
+  
+  .box-left{
+    // ¡Muestra error!
+    // @include box-rounded(5px);
+  }
+  
+}
+</pre>
+</section>
+
+<section style="width: 300px; position: absolute; right: 50px; top: 170px;">
+<pre>
+.container {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  width: 960px;
+  height: auto;
+}
+.container .box {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  width: 100px;
+  height: auto;
+}
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Herencia de estilos entre selectores</h3>
+<section style="width: 350px; position: absolute; left: 50px; top: 100px;">
+<pre>
+.container{
+  
+  .box{
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 100px;
+    height: auto;
+  }
+  
+  .box-right{
+    // Hereda los estilos de .box
+    @extend .box;
+    
+    // Y luego añade los 
+    // suyos propios
+    border-right: 1px solid red;
+  }
+  
+}
+</pre>
+</section>
+
+<section style="width: 380px; position: absolute; right: 50px; top: 170px;">
+<pre>
+.container .box, .container .box-right {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  width: 100px;
+  height: auto;
+}
+.container .box-right {
+  border-right: 1px solid red;
+}
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Bonus 1: Funciones</h3>
+<p>De forma nativa, Sass contiene una gran variedad de funciones para realizar distintos calculos, por ejemplo:</p>
+<section style="width: 380px; position: absolute; left: 50px; top: 170px;">
+<pre>
+$color: red;
+$pi: 3.14159265;
+
+h1{
+  // Aclarece un 10% al rojo
+  color: lighten(red, 10);
+  
+  &:hover{
+    // Oscurece un 5% al rojo
+    color: darken(red, 5);
+    
+    // Redondea a $pi
+    line-height: round($pi) em;
+  }
+  
+}
+</pre>
+</section>
+<section style="width: 380px; position: absolute; right: 50px; top: 250px;">
+<pre>
+h1 {
+  color: #ff3333;
+}
+h1:hover {
+  color: #e60000;
+  line-height: 3 em;
+}
+</pre>
+</section>
+<p style="position: absolute; top: 550px;">Más funciones: <a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html">http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html</a></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class="smaller">
+<p>También es posible definir nuestras propias funciones a través de <code>@function</code>:</p>
+
+<section style="width: 450px; position: absolute; left: 50px; top: 80px;">
+<pre>
+// Calcular el Número áureo (Golden radio)
+
+@function golden-radio($int) {
+  
+  // Devuelvo el número áureo
+  @return floor($int / 1.62);
+  
+}
+
+$width: 900px;
+
+.container{
+  width: $width;
+  
+  .left{
+    width: golden-radio($width);
+  }
+  
+  .right{
+    width: ($width - golden-radio($width));
+  }
+  
+}
+</pre>
+</section>
+<section style="width: 280px; position: absolute; right: 50px; top: 200px;">
+<pre>
+.container {
+  width: 900px;
+}
+.container .left {
+  width: 555px;
+}
+.container .right {
+  width: 345px;
+}
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Bonus 2: Estructuras de control y Bucles</h3>
+<p>Ideales para usar en conjunto con @mixins:</p>
+<section style="width: 450px; position: absolute; left: 50px; top: 90px;">
+<pre>
+// Define un mixin
+@mixin main-titles ($brand, $color: blue){
+  
+  // Dependiendo de la marca, define un valor
+  @if $brand == google{
+    $color : #3B56FF;
+  } @else if $brand == facebook {
+    $color : #76FF6B;
+  }
+  
+  // Crea un bucle para los elementos h1 a h5
+  @for $i from 1 through 5 {
+    
+    $amount : $i * 15;
+    
+    .#{$brand} h#{$i} {
+      // Por cada vuelta, oscurece un 15%
+      color : darken($color, $amount);      
+    }
+    
+  }
+  
+}
+
+// Llama al mixin definido
+@include main-titles(google);
+</pre>
+</section>
+<section style="width: 250px; position: absolute; right: 50px; top: 150px;">
+<pre>
+.google h1 {
+  color: #0021ee;
+}
+
+.google h2 {
+  color: #0016a1;
+}
+
+.google h3 {
+  color: #000c55;
+}
+
+.google h4 {
+  color: #000108;
+}
+
+.google h5 {
+  color: black;
+}
+
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article class='fill'>
+<h3>Nivel 16: Intermedio</h3>
+<p><img src='images/charmeleon.png'></p>
+<div class='source' style="margin-left: 50px;">Charmeleon</div>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>Estilos parciales</h3>
+<ul>
+<li>Archivos en donde su nombre comienza con un _guión bajo;</li>
+<li><strong>No se compilan a .css;</strong></li>
+<li>Ideales:</li>
+<ul>
+<li>Pensar estructuras de estilos de manera modularizada;</li>
+<li>Poder tener centralizadas variables / mixins que serán reutilizadas en varios lugares;</li>
+<li>Poder mejorar la organización de estilos.</li>
+</ul>		
+</li>
+</ul>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Estilos parciales</h3>
+<section style="width: 350px; position: absolute; left: 50px; top: 60px;">
+<pre>
+/* Archivo _variables.scss */
+$ancho: 960px;
+$azul: #3B56FF;
+</pre>
+</section>
+
+<section style="width: 350px; position: absolute; left: 50px; top: 140px;">
+<pre>
+/* Archivo _header.scss */
+.header{
+  width: $ancho;
+}
+</pre>
+</section>
+
+<section style="width: 350px; position: absolute; left: 50px; top: 240px;">
+<pre>
+/* Archivo _footer.scss */
+.footer{
+  background: $azul;
+}
+</pre>
+</section>
+
+<section style="width: 350px; position: absolute; left: 50px; top: 340px;">
+<pre>
+/* Archivo _site.scss */
+.site{
+  width: $ancho / 2;
+}
+</pre>
+</section>
+
+<section style="width: 350px; position: absolute; left: 50px; top: 440px;">
+<pre>
+/* Archivo styles.scss (AKA pkg) */
+
+// Importa cada estilo parcial
+@import "variables";
+@import "header";
+@import "footer";
+@import "site";
+</pre>
+</section>
+
+<section style="width: 380px; position: absolute; right: 50px; top: 170px;">
+<pre>
+.header {
+  width: 960px;
+}
+
+.footer {
+  background: #3b56ff;
+}
+
+.site {
+  width: 480px;
+}
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article>
+<h3>Estilos parciales</h3>
+<p>Otras maneras de usar <code>@import</code>:</p>
+<section style="margin-top: -20px;">
+<pre>
+// Si estamos importando un estilo parcial, 
+// no es necesario usar el guión bajo al importar, 
+// sin embargo Sass también lo detectará
+@import "_variables";
+
+// Lo mismo se puede hacer agregando la extensión del archivo
+@import "header.scss";
+
+// Y si se desea importar de la manera normal
+// tan solo hay que usar la extensión .css
+@import "footer.css";
+</pre>
+</section>
+<section>
+<pre>
+// Incluso es posible realizar importaciones
+// múltiples en una sola línea
+@import "variables", "header", "footer", "site";
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>¿Y Compass?</h3>
+<q>Sass y Compass estan intimamente relacionados.</q>
+<ul style="margin-top: 70px;">
+<li>Compass es un framework que nace como una forma de poder aprovechar el potencial de Sass.</li>
+<li><a style="font-size: 0.8em;" href="http://compass-style.org/">http://compass-style.org/</a></li>
+</ul>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<q style="margin-top: 30px;">En su esencia, Compass no es más que un gran conjunto de estilos parciales, dividos en distintas categorias: CSS3, Utilidades, Helpers...</q>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>Instalación</h3>
+<section>
+<pre>$ gem install compass</pre>
+</section>
+<h3>Creación de un proyecto nuevo</h3>
+<section>
+<pre>$ compass create &lt;miproyecto&gt;</pre>
+<p style="text-align: center; margin-top: 40px;"><img src="images/create-proyect.png"></p>
+<p>Compass genera automáticamente las carpetas para los archivos .scss / .css así como un archivo <code>config.rb</code> en donde se pueden indicar distintos parámetros de compilación y uso.</p>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>¿Y si quiero usarlo en un proyecto ya existente?</h3>
+<p>Basta con crear un archivo <code>config.rb</code> en la carpeta en donde vamos a trabajar:</p>
+<section>
+<pre>
+#config.rb
+css_dir = "css" # Carpeta en donde iran los .css
+sass_dir = "sass" # Carpeta en donde iran los .scss
+images_dir = "images" # Carpeta en donde van las imagenes
+output_style = :expanded # :expanded, :nested, :compact, :compressed
+</pre>
+</section>
+<p>Más info: <a href="http://compass-style.org/help/tutorials/configuration-reference/">http://compass-style.org/help/tutorials/configuration-reference/</a></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>Compilación usando Compass</h3>
+<p>En la carpeta en donde en donde se encuentra nuestro archivo <code>config.rb</code>:</p>
+<section>
+<pre>$ compass compile</pre>
+</section>
+<p>Compass lee el archivo de configuración para guiarse en donde buscar los archivos.</p>
+<p>Y al igual que con Sass, también podemos hacer que "vigile" si existen cambios:</p>
+<section>
+<pre>$ compass watch</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>CSS3</h3>
+<q style="margin-top: 15px;">
+...también conocido como el infierno de los prefijos...
+</q>
+
+<section>
+<pre>
+.box_gradient {
+  background-image: -webkit-linear-gradient(top, #444444, #999999);
+  background-image:    -moz-linear-gradient(top, #444444, #999999); 
+  background-image:     -ms-linear-gradient(top, #444444, #999999); 
+  background-image:      -o-linear-gradient(top, #444444, #999999); 
+  background-image:         linear-gradient(top, #444444, #999999);
+}
+.box_transition {
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+.box_shadow {
+  -webkit-box-shadow: 0px 0px 4px #ffffff;
+     -moz-box-shadow: 0px 0px 4px #ffffff;
+          box-shadow: 0px 0px 4px #ffffff;
+}
+// http://css3please.com/
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>CSS3</h3>
+<p>Utilizando Compass:</p>
+
+<section>
+<pre>
+// Importo el módulo CSS3 de Compass
+@import "compass/css3"; 
+
+.box_gradient {
+  // Sintaxis similar al estandar!
+  @include background-image(linear-gradient(top, #444444, #999999)); 
+}
+
+.box_transition {
+  @include transition(all 0.3s ease-out);
+}
+
+.box_shadow {
+  @include box-shadow(0px 0px 4px #ffffff);
+}
+</pre>
+</section>
+<p>Otros mixins disponibles: border-radius, text-shadow, background-clip, background-origin, background-size, box-sizing, columns... </p>
+<p>Más info <a href="http://compass-style.org/reference/compass/css3/">http://compass-style.org/reference/compass/css3/</a></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>CSS3</h3>
+<p><span class="black">¡HEY!</span> Pero yo trabajo en desarrollo mobile, sólo necesito los estilos para WebKit...</p>
+<section>
+<pre>
+// Importo el módulo CSS3 de Compass
+@import "compass/css3"; 
+
+// Desactiva el soporte de estilos para los demás navegadores
+$experimental-support-for-mozilla : false;
+$experimental-support-for-opera : false;
+$experimental-support-for-microsoft : false;
+
+.box_gradient {
+  @include background-image(linear-gradient(top, #444444, #999999)); 
+}
+
+.box_transition {
+  @include transition(all 0.3s ease-out);
+}
+
+.box_shadow {
+  @include box-shadow(0px 0px 4px #ffffff);
+}
+</pre>
+</section>
+<p>Más info: <a href="http://compass-style.org/reference/compass/support/">http://compass-style.org/reference/compass/support/</a></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Sprites (AKA Adiós FireWorks...)</h3>
+<p><span class="black">Paso 1</span>: Tener las imágenes preparadas que se van a utilizar en el sprite</p>
+<p><img src="images/iconos.png"></p>
+<p><span class="black">Paso 2</span>: Crear un archivo .scss con:</p>
+<section>
+<pre>
+// Indico que tome las imágenes .png que estan en /images/icons/
+@import "icons/*.png";
+
+// Crea el sprite
+@include all-icons-sprites;
+</pre>
+</section>
+<p>Notar dos cosas: 
+<ul style="margin-top: 10px;">
+<li>La ruta a donde ir a buscar las imágenes es relativa a la variable <code>images_dir</code> del <code>config.rb</code>.</li>
+<li>El nombre del @mixin tiene que concordar con el nombre de la carpeta (en este caso "icons").</li>
+</ul>
+</p>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Sprites (AKA Adiós FireWorks...)</h3>
+<section style="width: 650px;">
+<pre>
+.icons-sprite, .icons-note, .icons-photo, .icons-script, .icons-tag {
+  background: url('/images/icons-s0a4271b7ea.png') no-repeat;
+}
+
+.icons-note {
+  background-position: 0 0;
+}
+
+.icons-photo {
+  background-position: 0 -16px;
+}
+
+.icons-script {
+  background-position: 0 -32px;
+}
+
+.icons-tag {
+  background-position: 0 -48px;
+}
+</pre>
+</section>
+<img src="images/icons-s0a4271b7ea.png" style="position: absolute; right: 100px; top: 300px;">
+<p>Cada vez que agreguemos una nueva imagen, Compass se encargará de generar el sprite y volver a calcular las coordenadas de <code>background-position</code>.</p>
+<p>Más info: <a href="http://compass-style.org/help/tutorials/spriting/">http://compass-style.org/help/tutorials/spriting/</a></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Data URIs</h3>
+<textarea style="font-size: 11px; width: 750px; height: 500px; margin-top: 20px;">
+data:image/gif;base64,R0lGODlh9AGGAPcAAOTk5KysrLy8vKWlpRkZGbOzs5+fn7W1tXFxcdzc3MrKyri4uODg4Kenp+fn57q6ura2tqmpqeLi4tTU1NHR0cLCwpaWlr6+vsbGxhYWFnR0dICAgJCQkM3NzaKioqqqqtDQ0PLy8sjIyIyMjOnp6Xp6eoqKiuvr69jY2IODg4aGhpmZmZSUlHJycnh4eM7OztbW1pKSkkRERISEhI6Ojn5+fhEREXZ2dtra2m1tbWRkZFRUVIiIiGdnZ5ubm11dXXx8fMTExFJSUmpqamhoaEJCQldXVwUFBVZWVlpaWmxsbA0NDQkJCUpKSl9fX2JiYmBgYEZGRk1NTVBQUExMTC4uLkhISDIyMjAwMD09PTk5OUBAQDY2Njg4OD4+PjQ0NCwsLBwcHCIiIigoKCoqKiYmJiQkJCAgIB4eHrKnrAoABAUAATctM0c8QhIDA6KXnYJ4fjMnLRcMEkA5PTswNXJmbFtRViIYHmddYi0lKVRNUlRQT21lamJYXV5hXTs1OVFHTSsiJwsECAAJAERCQUpFRnpxdiYcIjw7PRcXFwUBBAEDARwSFzIwL3hudA4ICiUjJQEAA1lZWR8cHCkpKf39/QsLCyEhIQMDAwcHBycnJyUlJQ0KDBAQECMjIyEiIwYFAh0bHBsbGwEDCPz8/MHBwZycnPv7+/b29t7e3rCwsOzs7Pn5+e7u7q+vr/r6+qGhoaCgoPX19fDw8MDAwPf39+3t7Z2dna6uru/v7/j4+N/f3/T09LGxsfHx8VtbW6yiqLi0tqqcozs9OhscHFFRUS8uLTU1NQgICG9vbzMzM7WqsKOjo3+AfJOHjpyWmisrK3Vxck9MS0dHR39/f09PT4t/hfPp7jc5OTc3Nx0cHENDQ7W3tm5rbJSXlTs7O3V1dXd3dxMTExUSEhUTFH98fU9NTvrw9T9BQFJRUo6EigkNCdHHzU1PTIeDhY6OjH56fEhLSEpLSsrEyC0tLWthZ3Nzczc2NEVGST89PFtcWyspKP7+/gEBAf///wAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgTWFjaW50b3NoIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjBCNzhDOTNBMzdGNDExRTFBQ0U4ODYwRjc4NTU0NDZGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjBCNzhDOTNCMzdGNDExRTFBQ0U4ODYwRjc4NTU0NDZGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzcyNTMwNzUzN0MwMTFFMUFDRTg4NjBGNzg1NTQ0NkYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzcyNTMwNzYzN0MwMTFFMUFDRTg4NjBGNzg1NTQ0NkYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMi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
+</textarea>
+<p>(Copiar y pegar en la barra de direcciones)</p>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Data URIs</h3>
+<p>Data URI es la especificación que permite mostrar determinada información con solo especificar el <code>MIME type</code> y la información misma encodeada. El formato básico es:</p>
+<section>
+<pre>
+data:[&lt;mime type&gt;][;charset=&lt;charset&gt;][;base64],&lt;encoded data&gt;
+</pre>
+</section>
+<p>Lo interesante es que podemos utilizarlo para "embeber" información dentro de nuestros CSS. Compass provee una función utilitaria que simplifica el proceso:</p>
+<section>
+<pre>
+// Utilizando inline-image, Compass realiza 
+// todo el proceso de conversión a Data URI
+.logo{
+  background-image: inline-image("logo.png");
+}
+</pre>
+</section>
+<section>
+<pre>
+// Estilo generado
+.logo {
+  background-image: url('data:image/png;base64,iVoAAABAA..&lt;data&gt;..gAAAAASII=');
+}
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Data URIs</h3>
+<p>El mayor beneficio de usar Data URIs es el <strong>ahorro de peticiones al servidor</strong>, ya que toda la información se encuentra dentro del mismo CSS.</p>
+<p>Soporte:
+<ul style="margin-top: 10px;">
+<li>Firefox 2+</li>
+<li>Chrome</li>
+<li>Safari</li>
+<li>Internet Explorer 8+ (la información debe ser menor a 32KB)</li>
+</ul>
+</p>
+<p>Además no sólo se puede utilizar dentro del mismo CSS, sino tambien en el HTML:</p>
+<section>
+<pre>
+&lt;img src="data:image/gif;base64,R0lGODlhEAAOALMAAOazToeHh0tLS/7LZv/0jvb29t/f3//Ub//ge
+8WSLf/rhf/3kdbW1mxsbP//mf///yH5BAAAAAAALAAAAAAQAA4AAARe8L1Ekyky67QZ1h
+LnjM5UUde0ECwLJoExKcppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g
+77ZKPJjPZqIyd7sJAgVGoEGv2xsBxqNgYPj/gAwXEQA7" title="Data URI" alt="Data URI"&gt;
+</pre>
+</section>
+<p>Más info:
+<ul style="margin-top: 10px;">
+<li><a href="http://www.nczonline.net/blog/2009/10/27/data-uris-explained/">http://www.nczonline.net/blog/2009/10/27/data-uris-explained/</a></li>
+<li><a href="http://compass-style.org/reference/compass/helpers/inline-data/">http://compass-style.org/reference/compass/helpers/inline-data/</a>
+</ul>
+</p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article class='fill'>
+<h3>Nivel 36: Avanzado</h3>
+<p><img src='images/charizard.png'></p>
+<div class='source'>Charizard</div>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Extensiones</h3>
+<q>Lo grandioso de Compass no es son todas las herramientas que ofrece, sino también la posibilidad de compartir nuestras propias creaciones a través de extensiones.</q>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Extensiones</h3>
+<p>Algunas extensiones:</p>
+<a href="http://stitchcss.com/" style="position: absolute; left: 40px; top: 140px; border: 1px solid #CCC;"><img src='images/stitch.png'></a>
+<a href="http://jaredhardy.com/omg-text/" style="position: absolute; left: 80px; top: 280px; border: 1px solid #CCC;"><img src='images/omg-text.png'></a>
+<a href="https://github.com/imathis/fancy-buttons" style="position: absolute; right: 280px; top: 150px; border: 1px solid #CCC;"><img src='images/fancy-buttons.png'></a>
+<a href="http://susy.oddbird.net/" style="position: absolute; left: 400px; top: 300px; border: 1px solid #CCC;"><img src='images/susy.png'></a>
+<a href="https://github.com/nextmat/compass-960-plugin" style="position: absolute; right: 80px; top: 140px; border: 1px solid #CCC;"><img src='images/960-grid.png'></a>
+<ul style="position: absolute; left: 100px; top: 430px;">
+<li><a href="https://github.com/MoOx/compass-recipes">Compass Recipes</a></li>
+<li><a href="https://github.com/StanAngeloff/compass-magick">compass-magick</a></li>
+<li><a href="https://github.com/jhardy/Patterner">Patterner</a></li>
+</ul>
+<ul style="position: absolute; right: 300px; top: 430px;">
+<li><a href="https://github.com/sporkd/compass-html5-boilerplate">compass-html5-boilerplate</a></li>
+<li><a href="https://github.com/vwall/compass-twitter-bootstrap">compass-twitter-bootstrap</a></li>
+<li><a href="https://github.com/ericam/compass-css-lightbox">compass-css-lightbox</a></li>
+</ul>
+<p style="position: absolute; right: 150px; top: 540px;">
+<a href="https://github.com/search?type=Repositories&language=&q=compass&repo=&langOverride=&x=9&y=22&start_value=1">Más en GitHub!</a>
+</p>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Extensiones</h3>
+<p>Un caso real: <a href="https://github.com/dzignus/compass-3d-ribbon">compass-3d-ribbon</a></p>
+<img src='images/biblioteca-cj.png' style="position: absolute; left: 40px; top: 140px;">
+<img src='images/compass-3d-ribbon.png' style="position: absolute; right: 40px; top: 140px;">
+<img src='images/true-history.png' style="position: absolute; left: 40px; top: 615px;">
+<p style="position: absolute; right: 100px; top: 470px; width: 300px;"><a href="https://github.com/dzignus/compass-3d-ribbon">https://github.com/dzignus/compass-3d-ribbon</a></p>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Extensiones</h3>
+<p>Ejemplo de instalación de una extensión:</p>
+<section style="margin-top: -25px;">
+<pre>
+$ gem install compass-960-plugin
+</pre>
+</section>
+<p>En el <code>config.rb</code> especificamos que vamos a utilizar la extensión:</p>
+<section style="margin-top: -25px;">
+<pre>
+require 'ninesixty'
+
+css_dir = "css"
+sass_dir = "sass"
+images_dir = "images"
+output_style = :expanded
+</pre>
+</section>
+<p><span class="black">Y listo</span>, podemos comenzar a utilizar la extensión:</p>
+<section style="margin-top: -25px;">
+<pre>
+// Importo el reset y 960 grid
+@import "compass/reset";
+@import "960/grid";
+
+// Grillas a la carta
+@include grid-system-complete(16);
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Extensiones</h3>
+<p>Incluso grillas semánticas:</p>
+<section style="width: 300px; position: absolute; left: 50px; top: 100px;">
+<pre>
+@import "compass/reset";
+@import "960/grid";
+
+.container{
+  @include grid-container;
+	
+  .header{
+    @include grid(12);
+		
+    .logo{
+      @include grid(2);
+    }
+		
+    .search{
+      @include grid(10);
+    }
+		
+  }
+	
+}
+</pre>
+</section>
+<section style="width: 380px; position: absolute; right: 50px; top: 30px;">
+<pre>
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+.container .header {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 940px;
+}
+.container .header .header-left {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 140px;
+}
+.container .header .header-right {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 780px;
+}
+</pre>
+</section>
+</article>
+<!--Slide-->
+
+<!--Slide-->	        
+<article class='smaller'>
+<h3>Alternativas</h3>
+<p>Sass y Compass no son los únicos proyectos de su tipo:</p>
+<ul style="width: 450px;">
+<li style="margin-bottom: 60px;"><span class="black">LESS</span>: Tiene una sintaxis parecida a Sass y mixins parecidos a los de Compass, pero utiliza JavaScript para el parseo de los estilos. <br> <a href="http://lesscss.org/">http://lesscss.org/</a></li>
+<li style="margin-bottom: 60px;"><span class="black">Closure Stylesheets</span>: Desarrollado por Google, utiliza un Jar para la generación de estilos. <br> <a href="https://code.google.com/p/closure-stylesheets/">https://code.google.com/p/closure-stylesheets/</a></li>
+<li><span class="black">Bourbon</span>: Esta basado en Sass, es una colección de @mixins con muchas similitudes a Compass. <br> <a href="http://thoughtbot.com/bourbon/">http://thoughtbot.com/bourbon/</a></li>
+</ul>
+<img src='images/less.png' style="position: absolute; right: 40px; top: 160px;">
+<img src='images/closure.png' style="position: absolute; right: 40px; top: 320px;">
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article class='fill'>
+<p style="font-size: 3em; text-align: center; margin-top: 250px;">¿Preguntas?</p>
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article class='smaller'>
+<h3>¡Gracias!</h3>
+<p>Links:</p>
+<ul>
+<li><a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html">http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html</a></li>
+<li><a href="http://compass-style.org/reference/compass/">http://compass-style.org/reference/compass/</a></li>
+<li><a href="http://www.slideshare.net/chriseppstein/authoring-stylesheets-with-compass-sass">http://www.slideshare.net/chriseppstein/authoring-stylesheets-with-compass-sass</a></li>
+<li><a href="http://chriseppstein.github.com/blog/2009/09/20/why-stylesheet-abstraction-matters/">http://chriseppstein.github.com/blog/2009/09/20/why-stylesheet-abstraction-matters/</a></li>
+<li><a href="http://www.manning.com/netherland/">Sass and Compass in Action</a></li>
+</ul>
+<!--Slide-->
+
+</section>
+
+</body>
+
+</html>

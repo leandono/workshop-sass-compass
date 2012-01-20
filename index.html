@@ -137,7 +137,7 @@ Enero, 2012
 
 <!--Slide-->
 <article>
-<p>Sass y Compass nos van a dar una mano.</p>
+<p>Sass y Compass nos van a dar una ayuda.</p>
 <p style="text-align: center; margin-bottom: 60px;"><img src="images/sass-logo.gif"><br><a style="font-size: 0.8em;" href="http://sass-lang.com/">http://sass-lang.com/</a></p>
 <p style="text-align: center;"><img src="images/compass-logo.png"><br><a style="font-size: 0.8em;" href="http://compass-style.org/">http://compass-style.org/</a></p>
 </article>
@@ -158,7 +158,7 @@ Escribir CSS es muy simple, no hace falta utilizar otras herramientas o aprender
 <ul>
 <li>Porque la simplicidad de CSS es su peor enemigo:
 <ul>
-<li>En sitios medianos a grandes, es dificil de organizar, escalar, mantener y refactorear...</li>
+<li>En sitios medianos a grandes, es dificil de organizar, escalar, mantener y refactorizar...</li>
 </ul>
 </li>
 <li>Cada vez nos dedicamos más tiempo en investigación...</li>
@@ -248,12 +248,12 @@ Sass maneja dos tipos de sintaxis:
 <!--Slide-->
 <article>
 <h3>Comenzar a compilar</h3>
-<p>Abrir la consola, dirigirse a la carpeta en donde tenemos nuestros archivos .scss (navegar entre carpetas con el comando <code>cd</code>) y ejecutar:</p>
+<p>Abrir la consola, dirigirse a la carpeta en donde tenemos nuestros archivos <code>.scss</code> (navegar entre carpetas con el comando <code>cd</code>) y ejecutar:</p>
 <section>
 <pre>$ cd &lt;ruta_hacia_la_carpeta&gt;
 $ sass input.scss output.css</pre>
 </section>
-<p>Sass leerá el archivo input.scss y lo compilará a output.css.</p>
+<p>Sass leerá el archivo <code>input.scss</code> y lo compilará a <code>output.css</code>.</p>
 <p>Es importante leer los mensajes de la consola, ya que en ella se muestran los cambios realizados, así como si surgen errores de compilación.</p>
 </article>
 <!--Slide-->
@@ -261,11 +261,11 @@ $ sass input.scss output.css</pre>
 <!--Slide-->
 <article>
 <h3>Vigilar por cambios</h3>
-<p>Si deseamos que el proceso sea automático, podemos hacer que Sass "vigile" si existen cambios en nuestros .scss:</p>
+<p>Si deseamos que el proceso sea automático, podemos hacer que Sass "vigile" si existen cambios en nuestros <code>.scss</code>:</p>
 <section>
 <pre>$ sass --watch sass_folder:css_folder</pre>
 </section>
-<p>Sass detecta cada cada vez que se realiza un cambio (incluso nuevas carpetas), compilando los archivos .scss y creando los nuevos .css dentro de la ruta indicada.</p>
+<p>Sass detectará cada cada vez que se realiza un cambio (incluso nuevas carpetas), compilando los archivos <code>.scss</code> y creando los nuevos <code>.css</code> dentro de la ruta indicada.</p>
 <p>Cuando hayamos terminado el trabajo, para dejar que Sass siga ejecutandose, presionar <code>Ctrl + C</code>.
 </article>
 <!--Slide-->
@@ -273,7 +273,7 @@ $ sass input.scss output.css</pre>
 <!--Slide-->
 <article>
 <h3>Convertir .css a .scss</h3>
-<p>En el caso que ya tengamos archivos .css creados, podemos renombrarlos manualmente a .scss, Sass los detectará sin problemas.</p>
+<p>En el caso que ya tengamos archivos <code>.css</code> creados, podemos renombrarlos manualmente a <code>.scss</code>, Sass los detectará sin problemas.</p>
 <p>También se puede hacer el trabajo de manera automatizada con <code>sass-convert</code>:</p>
 <section>
 <pre>
@@ -696,7 +696,7 @@ $width: 900px;
 <h3>Estilos parciales</h3>
 <ul>
 <li>Archivos en donde su nombre comienza con un _guión bajo;</li>
-<li><strong>No se compilan a .css;</strong></li>
+<li><strong>No se compilan a <code>.css</code>;</strong></li>
 <li>Ideales:</li>
 <ul>
 <li>Pensar estructuras de estilos de manera modularizada;</li>
@@ -832,7 +832,7 @@ $azul: #3B56FF;
 <section>
 <pre>$ compass create &lt;miproyecto&gt;</pre>
 <p style="text-align: center; margin-top: 40px;"><img src="images/create-proyect.png"></p>
-<p>Compass genera automáticamente las carpetas para los archivos .scss / .css así como un archivo <code>config.rb</code> en donde se pueden indicar distintos parámetros de compilación y uso.</p>
+<p>Compass genera automáticamente las carpetas para los archivos <code>.scss</code> / <code>.css</code> así como un archivo <code>config.rb</code> en donde se pueden indicar distintos parámetros de compilación y uso.</p>
 </section>
 </article>
 <!--Slide-->
@@ -967,7 +967,7 @@ $experimental-support-for-microsoft : false;
 <h3>Sprites (AKA Adiós FireWorks...)</h3>
 <p><span class="black">Paso 1</span>: Tener las imágenes preparadas que se van a utilizar en el sprite</p>
 <p><img src="images/iconos.png"></p>
-<p><span class="black">Paso 2</span>: Crear un archivo .scss con:</p>
+<p><span class="black">Paso 2</span>: Crear un archivo <code>.scss</code> con:</p>
 <section>
 <pre>
 // Indico que tome las imágenes .png que estan en /images/icons/

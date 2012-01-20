@@ -34,6 +34,9 @@ Leandro D'Onofrio
 <a href="http://twitter.com/dzignus">@dzignus</a>
 <br>
 <br>
+<a href="https://github.com/dzignus/workshop-sass-compass">https://github.com/dzignus/workshop-sass-compass</a>
+<br>
+<br>
 <br>
 Enero, 2012
 </p>
@@ -188,7 +191,7 @@ Escribir CSS es muy simple, no hace falta utilizar otras herramientas o aprender
 
 <!--Slide-->
 <article>
-<h3>Instalación (en 2 pasos)</h3>
+<h3>Instalación de Sass (en 2 pasos)</h3>
 <br>
 <p><span class="black">Paso 1</span>: Instalar Ruby y RubyGems</p>
 <ul>
@@ -219,7 +222,7 @@ $ sudo apt-get install rubygems</pre>
 Sass maneja dos tipos de sintaxis:
 </p>
 <p>
-<span>Indentada:</span>
+<span>Indentada (al estilo Ruby):</span>
 </p>
 <section>
 <pre>
@@ -229,7 +232,7 @@ Sass maneja dos tipos de sintaxis:
   font-size: 0.3em</pre>
 </section>
 <p>
-<span>La manera actual (y la que utilizaremos):</span>
+<span>La manera actual (al estilo CSS, y la que utilizaremos):</span>
 </p>
 <section>
 <pre>
@@ -245,28 +248,39 @@ Sass maneja dos tipos de sintaxis:
 <!--Slide-->
 <article>
 <h3>Comenzar a compilar</h3>
-<p>En la carpeta en donde tenemos nuestros archivos .scss:</p>
+<p>Abrir la consola, dirigirse a la carpeta en donde tenemos nuestros archivos .scss (navegar entre carpetas con el comando <code>cd</code>) y ejecutar:</p>
 <section>
-<pre>$ sass input.scss output.css</pre>
+<pre>$ cd &lt;ruta_hacia_la_carpeta&gt;
+$ sass input.scss output.css</pre>
 </section>
-<p>También podemos hacer que Sass "vigile" si existen cambios en nuestros .scss:</p>
-<section>
-<pre>$ sass --watch sass_folder:css_folder</pre>
-</section>
-<p>Sass detecta cada cada vez que se realiza un cambio (incluso nuevas carpetas), compilando los archivos .scss y creando los nuevos .css dentro de la ruta indicada.</p>
-<p>En la consola se mostrarán los cambios realizados, así como si surgen errores de compilación.</p>
+<p>Sass leerá el archivo input.scss y lo compilará a output.css.</p>
+<p>Es importante leer los mensajes de la consola, ya que en ella se muestran los cambios realizados, así como si surgen errores de compilación.</p>
 </article>
 <!--Slide-->
 
 <!--Slide-->
 <article>
-<p>Si ya tenemos archivos .css creados, podemos renombrarlos manualmente a .scss, Sass los detectará sin problemas.</p>
+<h3>Vigilar por cambios</h3>
+<p>Si deseamos que el proceso sea automático, podemos hacer que Sass "vigile" si existen cambios en nuestros .scss:</p>
+<section>
+<pre>$ sass --watch sass_folder:css_folder</pre>
+</section>
+<p>Sass detecta cada cada vez que se realiza un cambio (incluso nuevas carpetas), compilando los archivos .scss y creando los nuevos .css dentro de la ruta indicada.</p>
+<p>Cuando hayamos terminado el trabajo, para dejar que Sass siga ejecutandose, presionar <code>Ctrl + C</code>.
+</article>
+<!--Slide-->
+
+<!--Slide-->
+<article>
+<h3>Convertir .css a .scss</h3>
+<p>En el caso que ya tengamos archivos .css creados, podemos renombrarlos manualmente a .scss, Sass los detectará sin problemas.</p>
 <p>También se puede hacer el trabajo de manera automatizada con <code>sass-convert</code>:</p>
 <section>
 <pre>
 $ sass-convert --from css --to scss --recursive &lt;ruta&gt;
 </pre>
 </section>
+<p>Vamos a comenzar a ver las características más importantes de Sass.</p>
 </article>
 <!--Slide-->
 
@@ -1251,6 +1265,20 @@ output_style = :expanded
 <li><a href="http://chriseppstein.github.com/blog/2009/09/20/why-stylesheet-abstraction-matters/">http://chriseppstein.github.com/blog/2009/09/20/why-stylesheet-abstraction-matters/</a></li>
 <li><a href="http://www.manning.com/netherland/">Sass and Compass in Action</a></li>
 </ul>
+<br>
+<br>
+<br>
+<br>
+<p>
+Leandro D'Onofrio
+<br>
+<a href="http://dzign.us/">http://dzign.us</a>
+<br>
+<a href="http://twitter.com/dzignus">@dzignus</a>
+<br>
+<a href="https://github.com/dzignus/workshop-sass-compass">https://github.com/dzignus/workshop-sass-compass</a>
+</p>
+</article>
 <!--Slide-->
 
 </section>

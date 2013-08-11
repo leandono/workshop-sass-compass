@@ -14,9 +14,9 @@
 
 <html>
 <head>
-	<title>Workshop: Sass y Compass</title>
-	<meta charset='utf-8'>
-	<script src='js/slides.js'></script>
+  <title>Workshop: Sass y Compass</title>
+  <meta charset='utf-8'>
+  <script src='js/slides.js'></script>
 </head>
   
 <body style='display: none'>
@@ -161,9 +161,9 @@ Escribir CSS es muy simple, no hace falta utilizar otras herramientas o aprender
 <li>En sitios medianos a grandes, es dificil de organizar, escalar, mantener y refactorizar...</li>
 </ul>
 </li>
-<li>Cada vez nos dedicamos más tiempo en investigación...</li>
-<li>Más tiempo en escribir estilos...</li>
-<li>Más tiempo en mantenimiento...</li>
+<li>Cada vez nos dedicamos más tiempo en investigación...</li>
+<li>Más tiempo en escribir estilos...</li>
+<li>Más tiempo en mantenimiento...</li>
 </ul>
 <p style="font-size: 1.2em; text-align: center; margin-top: 40px; margin-bottom: 80px; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">No somos máquinas, no nos interesa perder el tiempo, queremos ser más productivos.</p>
 </article>
@@ -203,7 +203,7 @@ Escribir CSS es muy simple, no hace falta utilizar otras herramientas o aprender
 # Debian
 $ sudo apt-get install ruby1.9.1
 $ sudo apt-get install rubygems</pre>
-</section>	
+</section>  
 </li>
 </ul>
 <p><span class="black">Paso 2</span>: Abrir la consola/terminal y escribir:</p>
@@ -241,7 +241,7 @@ Sass maneja dos tipos de sintaxis:
   color: blue;
   font-size: 0.3em;
 }</pre>
-</section>	
+</section>  
 </article>
 <!--Slide-->
 
@@ -289,7 +289,7 @@ $ sass-convert --from css --to scss --recursive &lt;ruta&gt;
 <h3>Anidamiento</h3>
 <section style="width: 400px; position: absolute; left: 50px; top: 80px;">
 <pre>
-/* estilos.scss */	
+/* estilos.scss */  
 
 // Anidamiento de selectores
 .container{
@@ -313,7 +313,7 @@ $ sass-convert --from css --to scss --recursive &lt;ruta&gt;
 
 <section style="width: 320px; position: absolute; right: 70px; top: 170px;">
 <pre>
-/* estilos.css */	
+/* estilos.css */ 
 
 .container h3 {
   color: blue;
@@ -328,7 +328,7 @@ $ sass-convert --from css --to scss --recursive &lt;ruta&gt;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Anidamiento</h3>
 <section style="width: 350px; position: absolute; left: 50px; top: 100px;">
@@ -344,11 +344,11 @@ $ sass-convert --from css --to scss --recursive &lt;ruta&gt;
     &:hover{
       text-decoration: none;
     }
-	
+  
     &:focus{
       color: red;
     }
-	
+  
     // Referencia al selector 
     // padre mayor
     .ie & {
@@ -381,7 +381,7 @@ $ sass-convert --from css --to scss --recursive &lt;ruta&gt;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Variables</h3>
 <section style="width: 400px; position: absolute; left: 50px; top: 50px;">
@@ -435,7 +435,7 @@ $ancho: 960px;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Mixins</h3>
 <p>Los mixins son abstracciones que permiten la reutilización de estilos.</p>
@@ -491,7 +491,7 @@ $ancho: 960px;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Herencia de estilos entre selectores</h3>
 <section style="width: 350px; position: absolute; left: 50px; top: 100px;">
@@ -536,7 +536,7 @@ $ancho: 960px;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Bonus 1: Funciones</h3>
 <p>De forma nativa, Sass contiene una gran variedad de funciones para realizar distintos calculos, por ejemplo:</p>
@@ -575,7 +575,7 @@ h1:hover {
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class="smaller">
 <p>También es posible definir nuestras propias funciones a través de <code>@function</code>:</p>
 
@@ -622,7 +622,7 @@ $width: 900px;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Bonus 2: Estructuras de control y Bucles</h3>
 <p>Ideales para usar en conjunto con @mixins:</p>
@@ -702,13 +702,13 @@ $width: 900px;
 <li>Pensar estructuras de estilos de manera modularizada;</li>
 <li>Poder tener centralizadas variables / mixins que serán reutilizadas en varios lugares;</li>
 <li>Poder mejorar la organización de estilos.</li>
-</ul>		
+</ul>   
 </li>
 </ul>
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Estilos parciales</h3>
 <section style="width: 350px; position: absolute; left: 50px; top: 60px;">
@@ -776,7 +776,7 @@ $azul: #3B56FF;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article>
 <h3>Estilos parciales</h3>
 <p>Otras maneras de usar <code>@import</code>:</p>
@@ -869,7 +869,7 @@ output_style = :expanded # :expanded, :nested, :compact, :compressed
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>CSS3</h3>
 <q style="margin-top: 15px;">
@@ -902,7 +902,7 @@ output_style = :expanded # :expanded, :nested, :compact, :compressed
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>CSS3</h3>
 <p>Utilizando Compass:</p>
@@ -931,7 +931,7 @@ output_style = :expanded # :expanded, :nested, :compact, :compressed
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>CSS3</h3>
 <p><span class="black">¡HEY!</span> Pero yo trabajo en desarrollo mobile, sólo necesito los estilos para WebKit...</p>
@@ -962,7 +962,7 @@ $experimental-support-for-microsoft : false;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Sprites (AKA Adiós FireWorks...)</h3>
 <p><span class="black">Paso 1</span>: Tener las imágenes preparadas que se van a utilizar en el sprite</p>
@@ -986,7 +986,7 @@ $experimental-support-for-microsoft : false;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Sprites (AKA Adiós FireWorks...)</h3>
 <section style="width: 650px;">
@@ -1018,7 +1018,7 @@ $experimental-support-for-microsoft : false;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Data URIs</h3>
 <textarea style="font-size: 11px; width: 750px; height: 500px; margin-top: 20px;">
@@ -1028,7 +1028,7 @@ data:image/gif;base64,R0lGODlh9AGGAPcAAOTk5KysrLy8vKWlpRkZGbOzs5+fn7W1tXFxcdzc3M
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Data URIs</h3>
 <p>Data URI es la especificación que permite mostrar determinada información con solo especificar el <code>MIME type</code> y la información misma encodeada. El formato básico es:</p>
@@ -1058,7 +1058,7 @@ data:[&lt;mime type&gt;][;charset=&lt;charset&gt;][;base64],&lt;encoded data&gt;
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Data URIs</h3>
 <p>El mayor beneficio de usar Data URIs es el <strong>ahorro de peticiones al servidor</strong>, ya que toda la información se encuentra dentro del mismo CSS.</p>
@@ -1096,14 +1096,14 @@ LnjM5UUde0ECwLJoExKcppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Extensiones</h3>
-<q>Lo grandioso de Compass no es son todas las herramientas que ofrece, sino también la posibilidad de compartir nuestras propias creaciones a través de extensiones.</q>
+<q>Lo grandioso de Compass no son todas las herramientas que ofrece, sino también la posibilidad de compartir nuestras propias creaciones a través de extensiones.</q>
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Extensiones</h3>
 <p>Algunas extensiones:</p>
@@ -1128,7 +1128,7 @@ LnjM5UUde0ECwLJoExKcppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Extensiones</h3>
 <p>Un caso real: <a href="https://github.com/dzignus/compass-3d-ribbon">compass-3d-ribbon</a></p>
@@ -1139,7 +1139,7 @@ LnjM5UUde0ECwLJoExKcppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Extensiones</h3>
 <p>Ejemplo de instalación de una extensión:</p>
@@ -1173,7 +1173,7 @@ output_style = :expanded
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Extensiones</h3>
 <p>Incluso grillas semánticas:</p>
@@ -1184,20 +1184,20 @@ output_style = :expanded
 
 .container{
   @include grid-container;
-	
+  
   .header{
     @include grid(12);
-		
+    
     .logo{
       @include grid(2);
     }
-		
+    
     .search{
       @include grid(10);
     }
-		
+    
   }
-	
+  
 }
 </pre>
 </section>
@@ -1234,7 +1234,7 @@ output_style = :expanded
 </article>
 <!--Slide-->
 
-<!--Slide-->	        
+<!--Slide-->          
 <article class='smaller'>
 <h3>Alternativas</h3>
 <p>Sass y Compass no son los únicos proyectos de su tipo:</p>
